@@ -91,7 +91,7 @@ export class EmailService {
       return await fs.readFile(fullPath);
     } catch (error) {
       console.log(error)
-      throw new Error(
+      throw new InternalServerErrorException(
         `Failed to read email from path or URL: ${filePath}`,
       );
     }
